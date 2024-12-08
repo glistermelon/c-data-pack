@@ -1,31 +1,8 @@
+#include "include.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-
-#ifdef _WIN32
-#define WINDOWS
-#endif
-
-#ifdef __APPLE__
-#define APPLE
-#endif
-
-#if defined(__linux__) || defined(__unix__)
-#define UNIX
-#endif
-
-#ifdef WINDOWS
-#include <windows.h>
-#endif
-
-#ifdef APPLE
-#error I don't have access to MacOS so it isn't supported yet.
-#endif
-
-#ifdef UNIX
-#include <limits.h>
-#include <unistd.h>
-#endif
 
 #define CHUNK_SIZE 1000
 
