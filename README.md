@@ -14,7 +14,7 @@ See `src/test.c` for an example. The packed data is from the `res` directory.
 
 The CMake API provides the `pack_data(target, resources)` function. `target` should be the executable target that resources are to be packed into. `resources` should be an absolute path to the directory containing the resources.
 
-`packdata.exe`, which is provided in Releases or can be built manually from `src/pack.c`, must either be present in your CMake source directory or be added to Path.
+`packdata.exe`, which is provided in Releases or can be built manually from `src/pack.c`, must be present in your CMake source directory.
 
 See the `test` target in `CMakeLists.txt` for an example.
 
