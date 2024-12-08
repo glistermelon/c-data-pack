@@ -187,8 +187,8 @@ int main(int argc, char* argv[]) {
 
     if (argc < 2) return 1;
 
-    const char* target_file = argv[1]; // "C:/Users/TheGreatMelon/Desktop/sample.txt";
-    const char* resource_dir = argv[2]; // "C:/Users/TheGreatMelon/Desktop/c-data-packaging/res/";
+    const char* target_file = argv[1];
+    const char* resource_dir = argv[2];
 
     struct cdpk_package package;
     cdpk_package_init(&package, resource_dir);
