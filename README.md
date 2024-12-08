@@ -23,3 +23,15 @@ See the `test` target in `CMakeLists.txt` for an example.
 * **Windows only.** I have access to a Linux system and intend to implement Linux functionality soon. I have no plans to implement MacOS functionality because I don't have access to MacOS.
 
 * **Most likely cannot handle non-ASCII file names.**
+
+## Details For Nerds
+
+The data is packed into the end of the executable in this fashion (see `pack.c` for details, particularly the implementation of `cdpk_package_apply`):
+1. Binary data of each file is appended
+2. For each file:
+    1. File size is appended as an 64-bit unsigned big endian integer
+    2. A null byte is appended
+    3. The file path is appended
+6. Lastly, the number of file paths is appended as a 32-bit unsigned big endian integer
+
+The data is read by opening the executable during runtime with `fopen` and reading it in reverse `fseek` and `fread`. See `unpack.c` for details. An initially call to `cdpk_init` caches data sizes and `fseek` offsets for easy later accessibility.
