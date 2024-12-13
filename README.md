@@ -34,4 +34,4 @@ The data is packed into the end of the executable in this fashion (see `pack.c` 
     3. The file path is appended
 6. Lastly, the number of file paths is appended as a 32-bit unsigned big endian integer
 
-The data is read by opening the executable during runtime with `fopen` and reading it in reverse `fseek` and `fread`. See `unpack.c` for details. An initially call to `cdpk_init` caches data sizes and `fseek` offsets for easy later accessibility.
+The data is read by opening the executable during runtime with `fopen` and reading it in reverse `fseek` and `fread`. See `unpack.c` for details. An initial call to `cdpk_init` caches data sizes and `fseek` offsets for easy later accessibility.
